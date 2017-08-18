@@ -3,19 +3,22 @@ target: Makefile
 ---
 {% set github_user = data.get('vars')['github']['user'] -%}
 {% set github_org = data.get('vars')['github']['org'] -%}
+{% set github_repo = data.get('vars')['github']['repo'] -%}
+
 {% set docker_user = data.get('vars')['docker']['user'] -%}
 {% set docker_org = data.get('vars')['docker']['user'] -%}
+{% set docker_repo = data.get('vars')['docker']['repo'] -%}
 
 SHELL := /bin/bash
 
 GITHUB_USER ?= {{ github_user }}
 GITHUB_ORG ?= {{ github_org }}
-GITHUB_REPO := docker-dgoss
+GITHUB_REPO := {{ github_repo }}
 GITHUB_TAG = $(shell git tag | sort -n | tail -1)
 
 DOCKER_USER ?= {{ docker_user }}
 DOCKER_ORG ?= {{ docker_org }}
-DOCKER_REPO := dgoss
+DOCKER_REPO := {{ docker_repo }}
 DOCKER_TAG := latest
 DOCKER_IMAGE := $(DOCKER_ORG)/$(DOCKER_REPO):$(DOCKER_TAG)
 
