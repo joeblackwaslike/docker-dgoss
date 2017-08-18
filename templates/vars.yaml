@@ -1,0 +1,12 @@
+name: dgoss
+heading: Dgoss Test Image
+description: |-
+  A docker image for testing docker containers.
+github:
+  user: joeblackwaslike
+  org: joeblackwaslike
+  repo: docker-dgoss
+docker:
+  user: joeblackwaslike
+  org: joeblackwaslike
+  repo: dgoss

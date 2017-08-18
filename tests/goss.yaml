@@ -1,0 +1,26 @@
+file:
+  /tests:
+    exists: true
+    mode: "0755"
+    size: 4096
+    owner: root
+    group: root
+    filetype: directory
+    contains: []
+  /usr/local/bin/dgoss:
+    exists: true
+    mode: "0755"
+    size: 3137
+    owner: root
+    group: root
+    filetype: file
+    contains:
+    - 'USAGE="USAGE: $(basename "$0") [run|edit] <docker_run_params>"'
+  /usr/local/bin/docker:
+    exists: true
+    mode: "0755"
+    size: 14125648
+    owner: root
+    group: root
+    filetype: file
+    sha256: 36f8e064c2edd984dbe2d9594ac070ed94104cb1c93a1757945624e0f49f2394

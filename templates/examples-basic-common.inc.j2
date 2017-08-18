@@ -1,0 +1,19 @@
+---
+target: examples/basic/tests/common.inc
+mode: '755'
+---
+{% set github_org = data.get('vars')['github']['org'] -%}
+
+#!/usr/bin/env bash
+
+BASEDIR=$(dirname $0)
+TESTDIR=$(realpath $BASEDIR)
+IMAGE={{ github_org }}/dgoss:latest
+COMMAND=$(basename $0)
+
+docker run -it --rm \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -v $TESTDIR:/tests \
+    -v /tmp:/tmp \
+    $IMAGE \
+    dgoss $COMMAND "$@"

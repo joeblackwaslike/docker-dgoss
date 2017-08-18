@@ -1,0 +1,29 @@
+addons:
+  apt:
+    packages:
+    - realpath
+language: python
+services: docker
+env:
+  global:
+  - GITHUB_USER=joeblackwaslike
+  - GITHUB_ORG=joeblackwaslike
+  - DOCKER_USER=joeblackwaslike
+  - DOCKER_ORG=joeblackwaslike
+  # DOCKER_PASS
+  - secure: "R0Bxz2aOQulGQMToTXfXGEBAjP8vZKscUI/OPxEUs1xsJ6nhgiLnziIfakjfr5dG56Bv2emGuIVrWZfI95aa0CpjZYadAeCdvsqBhu2u42UmByFBFV2JL/NY2iEHQioZsJ/DBYQ+izBQH5iGVtOGBIg2wbFAXvjUio70piDjLWeRA3BWsNs3Ti8IyZtecVqGvJTLV5JS/cOklKedljf4kQ72BR0N9+16NAbqw3ZtbOze2M4ICGZGVX9gGUJ+rUVOWsIr6C0YZwcxuBlPxFcCPXlxuk/BwvSylB+Q4xxYD5DG0AI/GgwzJFh9Mz1jucqCJNcouSD6ZDAKifZj0GExDjWoi7APuLcuykuFgJ03wK9I5F+vXuOHLRkNxqx0BeCznMGzas2WXKVJGsSob6kKlYc9cbqcZ83rF099IvE047lEWyOXUR978KDsVTGmDKtpsWlL+W5z+JmSdUNDkM0gwmWjxJqJX2VDCzNJMvw7wKiDjmrmE7RQA8bkJrvJloPkS4XUqDKF7gNOQPiMhYZRRCwcCfEXHBZKeyiJdSDBAlyXZDoekRbtvz/MurS44eI+t07Zw33stJZU8V5dP6ZRGe/Mi5XtEiSry737SaAAz8e00iO0QzzmSljH35SydEvJgfYnNhVVXHseOFyTEpSodi/w1EFHAC9DU6kINCDT84Y="
+notifications:
+  email:
+    on_success: never
+    on_failure: always
+
+before_install: source scripts/ci/environment.sh
+
+install: make build
+
+script: make test
+
+after_success:
+- ci-tag-build
+- hub-push
+- hub-update-readme
