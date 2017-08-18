@@ -1,5 +1,5 @@
 # Dgoss Test Image
-[![Build Status](https://travis-ci.org/joeblackwaslike/docker-dgoss.svg?branch=master)](https://travis-ci.org/joeblackwaslike/) [![Docker Pulls](https://img.shields.io/docker/pulls/joeblackwaslike/.svg)](https://hub.docker.com/r///)
+[![Build Status](https://travis-ci.org/joeblackwaslike/docker-dgoss.svg?branch=master)](https://travis-ci.org/joeblackwaslike/docker-dgoss) [![Docker Pulls](https://img.shields.io/docker/pulls/joeblackwaslike/dgoss.svg)](https://hub.docker.com/r/joeblackwaslike/dgoss/)
 
 
 ## Maintainer

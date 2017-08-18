@@ -6,14 +6,14 @@ target: README.md
 {% set github_org = github['org'] -%}
 {% set github_repo = github['repo'] -%}
 
-{% set docker = data.get('vars')['github'] -%}
+{% set docker = data.get('vars')['docker'] -%}
 {% set docker_org = docker['org'] -%}
-{% set github_repo = docker['repo'] -%}
+{% set docker_repo = docker['repo'] -%}
 
 {% set github_branch = env.get('BRANCH', 'master') -%}
 
 # {{ data.get('vars')['heading'] }}
-[![Build Status](https://travis-ci.org/{{ github_org }}/{{ github_repo }}.svg?branch={{ github_branch }})](https://travis-ci.org/{{ docker_org }}/{{ docker_repo }}) [![Docker Pulls](https://img.shields.io/docker/pulls/{{ docker_org }}/{{ docker_repo }}.svg)](https://hub.docker.com/r/{{ docker_user }}/{{ docker_repo }}/)
+[![Build Status](https://travis-ci.org/{{ github_org }}/{{ github_repo }}.svg?branch={{ github_branch }})](https://travis-ci.org/{{ github_org }}/{{ github_repo }}) [![Docker Pulls](https://img.shields.io/docker/pulls/{{ docker_org }}/{{ docker_repo }}.svg)](https://hub.docker.com/r/{{ docker_org }}/{{ docker_repo }}/)
 
 
 ## Maintainer
