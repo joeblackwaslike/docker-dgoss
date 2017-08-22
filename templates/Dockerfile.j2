@@ -2,7 +2,6 @@
 target: Dockerfile
 ---
 {% set docker_org = data.get('vars')['docker']['org'] -%}
-{% if not github_org -%} {{ raiser('github_org not set') }} {% endif -%}
 
 FROM    {{ docker_org }}/debian:stretch
 

@@ -22,7 +22,7 @@ build-test:
 	tests/edit $(DOCKER_IMAGE) tail -f /dev/null
 
 templates:
-	tmpld --data=templates/vars.yaml \
+	tmpld --strict --data=templates/vars.yaml \
 		$(shell find templates -type f -name '*.j2' | xargs)
 
 test:
